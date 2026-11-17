@@ -71,3 +71,7 @@ export default defineConfig([
   },
 ]);
 ```
+
+## Known Security Advisories
+
+- **CVE-2026-112366 (picomatch ReDoS)**: No patched version available yet (as of 2026-11-17). This is a **dev-only dependency** (build tooling). The portfolio is a static site; no user-supplied glob patterns are processed at runtime. Risk accepted temporarily. Tracked in [issue link].
