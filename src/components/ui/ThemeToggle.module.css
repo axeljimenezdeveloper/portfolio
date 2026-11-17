@@ -1,0 +1,27 @@
+/* File: src/components/ui/ThemeToggle.module.css */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out-expo),
+    border-color var(--duration-fast) var(--ease-out-expo),
+    transform var(--duration-fast) var(--ease-out-expo);
+}
+
+.toggle:hover {
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
