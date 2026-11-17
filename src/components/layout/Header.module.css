@@ -1,0 +1,46 @@
+/* File: src/components/layout/Header.module.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--bg-base);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background-color: color-mix(in srgb, var(--bg-base) 85%, transparent);
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color var(--duration-fast) var(--ease-out-expo);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--accent-line);
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 1rem 1.25rem;
+  }
+
+  .nav {
+    gap: 1.25rem;
+  }
+
+  .link {
+    font-size: 0.875rem;
+  }
+}
