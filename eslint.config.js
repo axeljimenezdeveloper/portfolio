@@ -14,13 +14,13 @@ export default tseslint.config(
   // 2. Reglas base de ESLint
   js.configs.recommended,
 
-  // 3. Reglas recomendadas de TypeScript — SOLO en .ts/.tsx
+  // 3. Reglas recomendadas de TypeScript - SOLO en .ts/.tsx
   ...tseslint.configs.recommendedTypeChecked.map((config) => ({
     ...config,
     files: ['**/*.{ts,tsx}'],
   })),
 
-  // 4. Parser type-aware — SOLO en archivos TS
+  // 4. Parser type-aware - SOLO en archivos TS
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -58,13 +58,22 @@ export default tseslint.config(
     },
   },
 
-  // 8. Globales de navegador y Node
+  // 8. Override: router.tsx no es un archivo de componentes.
+  // Exporta `router` (config) y define componentes lazy. Fast Refresh no aplica.
+  {
+    files: ['src/app/router.tsx'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
+
+  // 9. Globales de navegador y Node
   {
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
     },
   },
 
-  // 9. Prettier SIEMPRE al final — desactiva reglas de formato en conflicto
+  // 10. Prettier SIEMPRE al final - desactiva reglas de formato en conflicto
   prettierConfig,
 );

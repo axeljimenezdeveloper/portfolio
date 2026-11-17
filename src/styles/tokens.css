@@ -1,0 +1,38 @@
+/* File: src/styles/tokens.css */
+:root {
+  --bg-base: #0a0a0b;
+  --bg-elevated: #141416;
+  --border-subtle: #26262a;
+  --text-primary: #f5f4f0;
+  --text-secondary: #a1a09b;
+  --accent: #c8ff00;
+  --accent-ink: #0a0a0b;
+  --accent-line: #c8ff00;
+
+  --font-display: 'Inter Tight', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 600ms;
+}
+
+[data-theme='light'] {
+  --bg-base: #f5f4f0;
+  --bg-elevated: #ffffff;
+  --border-subtle: #d9d7cf;
+  --text-primary: #0a0a0b;
+  --text-secondary: #5a5955;
+  --accent: #c8ff00;
+  --accent-ink: #0a0a0b;
+  --accent-line: #4a5e00;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0.01ms;
+    --duration-base: 0.01ms;
+    --duration-slow: 0.01ms;
+  }
+}
